@@ -11,8 +11,7 @@
             android:id="@+id/texto_rankings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:text="Rankings"
+            android:text="@string/rankings"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +47,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="Nombre_Jugador"
+                    android:text="@string/nombre_jugador"
                     app:layout_constraintBottom_toTopOf="@+id/texto_puntuacion_j1"
                     app:layout_constraintStart_toEndOf="@+id/imagen_jugador1"
                     app:layout_constraintTop_toTopOf="parent"
@@ -59,7 +58,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="36dp"
-                    android:text="Puntuacion"
+                    android:text="@string/puntuacion"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imagen_jugador1" />
 
@@ -80,24 +79,26 @@
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <TextView
+                    android:id="@+id/texto_nombre_j2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nombre_jugador"
+                    app:layout_constraintBottom_toTopOf="@+id/texto_puntuacion_j2"
+                    app:layout_constraintStart_toEndOf="@+id/imagen_jugador2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.481" />
+
+                <TextView
                     android:id="@+id/texto_puntuacion_j2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginBottom="36dp"
-                    android:text="Puntuacion"
+                    android:text="@string/puntuacion"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imagen_jugador2" />
 
-                <TextView
-                    android:id="@+id/texto_nombre_j2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nombre_Jugador"
-                    app:layout_constraintBottom_toTopOf="@+id/texto_puntuacion_j2"
-                    app:layout_constraintStart_toEndOf="@+id/imagen_jugador2"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.481" />
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -120,7 +121,7 @@
                     android:id="@+id/texto_nombre_j3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nombre_Jugador"
+                    android:text="@string/nombre_jugador"
                     app:layout_constraintBottom_toTopOf="@+id/texto_puntuacion_j3"
                     app:layout_constraintStart_toEndOf="@+id/imagen_jugador3"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -130,7 +131,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="40dp"
-                    android:text="Puntuacion"
+                    android:text="@string/puntuacion"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -155,7 +156,7 @@
                     android:id="@+id/texto_nombre_j4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nombre_Jugador"
+                    android:text="@string/nombre_jugador"
                     app:layout_constraintBottom_toTopOf="@+id/texto_puntuacion_j4"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imagen_jugador4"
@@ -166,7 +167,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="32dp"
-                    android:text="Puntuacion"
+                    android:text="@string/puntuacion"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
