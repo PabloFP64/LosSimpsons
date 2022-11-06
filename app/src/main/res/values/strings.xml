@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">LosSimpsons</string>
+    <string name="personajes">Personajes</string>
+    <string name="ranking">Ranking</string>
+    <string name="jugadores">Jugadores</string>
+    <string name="escenarios">Escenarios</string>
+    <string name="acerca_de">Acerca de</string>
 </resources>
