@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".Escenarios">
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="500dp"
+        android:layout_height="900dp"
+        app:srcCompat="@drawable/escenas"
+        tools:layout_editor_absoluteX="-45dp"
+        tools:layout_editor_absoluteY="-102dp" />
+
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="396dp"
@@ -41,17 +49,16 @@
             android:text="@string/nivel1" />
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+            android:id="@+id/imageView2"
+            android:layout_width="459dp"
+            android:layout_height="238dp"
+            app:srcCompat="@drawable/mou" />
 
         <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+            android:id="@+id/imageView"
+            android:layout_width="449dp"
+            android:layout_height="270dp"
+            app:srcCompat="@drawable/cocina" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,71 +6,124 @@
     android:layout_height="match_parent"
     tools:context=".Jugadores">
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="500dp"
+        android:layout_height="900dp"
+        app:srcCompat="@drawable/escenas"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-95dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="94dp"
+        android:layout_height="82dp"
+        android:src="@drawable/image"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="180dp" />
+
     <TextView
-        android:id="@+id/texto_jugadores"
-        android:layout_width="wrap_content"
+        android:id="@+id/textView10"
+        android:layout_width="68dp"
+        android:layout_height="58dp"
+        android:text="Nombre_jugador"
+        android:textColor="#050505"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="121dp"
+        tools:layout_editor_absoluteY="180dp" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="68dp"
+        android:layout_height="58dp"
+        android:text="Nombre_jugador"
+        android:textColor="#050505"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="121dp"
+        tools:layout_editor_absoluteY="288dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="94dp"
+        android:layout_height="82dp"
+        android:src="@drawable/image"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="288dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:text="@string/jugadores"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Jugadores"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="59dp" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="306dp"
-        android:layout_height="496dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/texto_jugadores"
-        app:layout_constraintVertical_bias="0.326">
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="85dp"
+        android:layout_height="37dp"
+        android:backgroundTint="#5677B1"
+        android:text="Guardar"
+        android:textSize="10sp"
+        tools:layout_editor_absoluteX="189dp"
+        tools:layout_editor_absoluteY="225dp" />
 
-        <ImageView
-            android:id="@+id/imagen2"
-            android:layout_width="70dp"
-            android:layout_height="170dp"
-            android:layout_marginTop="48dp"
-            android:layout_marginEnd="48dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:mipmap/sym_def_app_icon" />
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="85dp"
+        android:layout_height="37dp"
+        android:backgroundTint="#BA4447"
+        android:text="Volver"
+        android:textSize="10sp"
+        tools:layout_editor_absoluteX="288dp"
+        tools:layout_editor_absoluteY="225dp" />
 
-        <ImageView
-            android:id="@+id/imagen1"
-            android:layout_width="70dp"
-            android:layout_height="170dp"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="48dp"
-            app:layout_constraintEnd_toStartOf="@+id/imagen2"
-            app:layout_constraintHorizontal_bias="0.157"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:mipmap/sym_def_app_icon" />
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="85dp"
+        android:layout_height="37dp"
+        android:backgroundTint="#BA4447"
+        android:text="Volver"
+        android:textSize="10sp"
+        tools:layout_editor_absoluteX="288dp"
+        tools:layout_editor_absoluteY="327dp" />
 
-        <ImageView
-            android:id="@+id/imagen4"
-            android:layout_width="70dp"
-            android:layout_height="170dp"
-            android:layout_marginEnd="48dp"
-            android:layout_marginBottom="56dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@android:mipmap/sym_def_app_icon" />
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="85dp"
+        android:layout_height="37dp"
+        android:backgroundTint="#5677B1"
+        android:text="Guardar"
+        android:textSize="10sp"
+        tools:layout_editor_absoluteX="189dp"
+        tools:layout_editor_absoluteY="327dp" />
 
-        <ImageView
-            android:id="@+id/imagen3"
-            android:layout_width="70dp"
-            android:layout_height="170dp"
-            android:layout_marginStart="48dp"
-            android:layout_marginBottom="56dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imagen4"
-            app:layout_constraintHorizontal_bias="0.157"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@android:mipmap/sym_def_app_icon" />
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="193dp"
+        android:layout_height="39dp"
+        android:background="#EDE4DFDF"
+        android:ems="10"
+        android:hint="Introduce el nombre"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="189dp"
+        tools:layout_editor_absoluteY="180dp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="193dp"
+        android:layout_height="39dp"
+        android:background="#EDE4DFDF"
+        android:ems="10"
+        android:hint="Introduce el nombre"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="189dp"
+        tools:layout_editor_absoluteY="288dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
