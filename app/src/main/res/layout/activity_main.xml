@@ -90,12 +90,14 @@
 
         <ImageView
             android:id="@+id/imageView15"
-            android:layout_width="485dp"
-            android:layout_height="869dp"
+            android:layout_width="413dp"
+            android:layout_height="891dp"
             android:backgroundTint="#F44336"
-            app:srcCompat="@drawable/fondomain"
-            tools:layout_editor_absoluteX="-57dp"
-            tools:layout_editor_absoluteY="-60dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/fondomain" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
