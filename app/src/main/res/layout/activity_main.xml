@@ -7,98 +7,90 @@
     tools:context=".MainActivity">
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="414dp"
+        android:layout_height="893dp"
+        android:backgroundTint="#F44336"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fondomain" />
 
-        <Button
-            android:id="@+id/boton_personajes"
-            android:layout_width="160dp"
-            android:layout_height="55dp"
-            android:layout_marginTop="112dp"
-            android:layout_weight="1"
-            android:backgroundTint="#03A9F4"
-            android:onClick="VentanaPersonajes"
-            android:text="@string/main_personajes"
-            app:layout_constraintBottom_toTopOf="@+id/boton_ranking"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.593" />
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="414dp"
+        android:layout_height="92dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
 
-        <Button
-            android:id="@+id/boton_ranking"
-            android:layout_width="130dp"
-            android:layout_height="51dp"
-            android:layout_marginBottom="40dp"
-            android:layout_weight="1"
-            android:backgroundTint="#B0F44336"
-            android:onClick="VentanaRanking"
-            android:text="@string/main_ranking"
-            app:layout_constraintBottom_toTopOf="@+id/boton_jugadores"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/boton_jugadores"
-            android:layout_width="146dp"
-            android:layout_height="54dp"
-            android:layout_marginBottom="44dp"
-            android:layout_weight="1"
-            android:backgroundTint="#FF9800"
-            android:onClick="VentanaJugadores"
-            android:text="@string/main_jugadores"
-            app:layout_constraintBottom_toTopOf="@+id/boton_escenarios"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/boton_escenarios"
-            android:layout_width="140dp"
-            android:layout_height="60dp"
-            android:layout_marginBottom="36dp"
-            android:layout_weight="1"
-            android:backgroundTint="#C4673AB7"
-            android:onClick="VentanaEscenarios"
-            android:text="@string/main_escenarios"
-            app:layout_constraintBottom_toTopOf="@+id/boton_acercade"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent" />
+    <LinearLayout
+        android:layout_width="328dp"
+        android:layout_height="679dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+        app:layout_constraintEnd_toEndOf="@+id/imageView15"
+        app:layout_constraintStart_toStartOf="@+id/imageView15"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <Button
             android:id="@+id/boton_acercade"
             android:layout_width="140dp"
-            android:layout_height="58dp"
-            android:layout_marginBottom="176dp"
+            android:layout_height="5dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
             android:layout_weight="1"
             android:backgroundTint="#8BC34A"
+            android:foregroundGravity="center_horizontal"
+            android:gravity="center|center_horizontal"
             android:onClick="VentanaAcercaDe"
-            android:text="@string/main_acerca_de"
-            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:text="@string/main_acerca_de" />
 
-        <ImageView
-            android:id="@+id/imageView15"
-            android:layout_width="413dp"
-            android:layout_height="891dp"
-            android:backgroundTint="#F44336"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/fondomain" />
+        <Button
+            android:id="@+id/boton_jugadores"
+            android:layout_width="146dp"
+            android:layout_height="5dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="#FF9800"
+            android:onClick="VentanaJugadores"
+            android:text="@string/main_jugadores" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/boton_escenarios"
+            android:layout_width="140dp"
+            android:layout_height="5dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="#C4673AB7"
+            android:onClick="VentanaEscenarios"
+            android:text="@string/main_escenarios" />
+
+        <Button
+            android:id="@+id/boton_personajes"
+            android:layout_width="140dp"
+            android:layout_height="5dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:backgroundTint="#03A9F4"
+            android:onClick="VentanaPersonajes"
+            android:text="@string/main_personajes" />
+
+        <Button
+            android:id="@+id/boton_ranking"
+            android:layout_width="140dp"
+            android:layout_height="5dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="40dp"
+            android:layout_weight="1"
+            android:backgroundTint="#B0F44336"
+            android:onClick="VentanaRanking"
+            android:text="@string/main_ranking" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
