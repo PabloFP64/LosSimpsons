@@ -17,172 +17,188 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/fondopan" />
 
-    <ImageButton
-        android:id="@+id/imageButton6"
-        android:layout_width="94dp"
-        android:layout_height="82dp"
-        android:src="@drawable/image"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="180dp" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="68dp"
-        android:layout_height="58dp"
-        android:text="Nombre_jugador"
-        android:textColor="#050505"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="121dp"
-        tools:layout_editor_absoluteY="180dp" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="68dp"
-        android:layout_height="58dp"
-        android:text="Nombre_jugador"
-        android:textColor="#050505"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="121dp"
-        tools:layout_editor_absoluteY="288dp" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="68dp"
-        android:layout_height="58dp"
-        android:text="Nombre_jugador"
-        android:textColor="#050505"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="567dp" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="68dp"
-        android:layout_height="58dp"
-        android:text="Nombre_jugador"
-        android:textColor="#050505"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="478dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton7"
-        android:layout_width="94dp"
-        android:layout_height="82dp"
-        android:src="@drawable/image"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="288dp" />
-
-    <TextView
-        android:id="@+id/textView4"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Jugadores"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="59dp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="182dp"
-        android:layout_height="35dp"
-        android:backgroundTint="#BC673AB7"
-        android:text="Guardar"
-        android:textSize="10sp"
-        tools:layout_editor_absoluteX="189dp"
-        tools:layout_editor_absoluteY="219dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:orientation="horizontal"></LinearLayout>
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="182dp"
-        android:layout_height="36dp"
-        android:backgroundTint="#BC673AB7"
-        android:text="Guardar"
-        android:textSize="10sp"
-        tools:layout_editor_absoluteX="189dp"
-        tools:layout_editor_absoluteY="327dp" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:text="Jugadores"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="34sp"
+            android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="193dp"
-        android:layout_height="39dp"
-        android:background="#EDE4DFDF"
-        android:ems="10"
-        android:hint="Introduce el nombre"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="189dp"
-        tools:layout_editor_absoluteY="180dp" />
+        <LinearLayout
+            android:layout_width="387dp"
+            android:layout_height="109dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="193dp"
-        android:layout_height="39dp"
-        android:background="#EDE4DFDF"
-        android:ems="10"
-        android:hint="Introduce el nombre"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="189dp"
-        tools:layout_editor_absoluteY="288dp" />
+            <ImageButton
+                android:id="@+id/imageButton6"
+                android:layout_width="94dp"
+                android:layout_height="82dp"
+                android:src="@drawable/image" />
 
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Editar"
-        android:textSize="16sp"
-        tools:layout_editor_absoluteX="189dp"
-        tools:layout_editor_absoluteY="440dp" />
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="68dp"
+                android:layout_height="58dp"
+                android:layout_marginLeft="10dp"
+                android:text="Nombre_jugador"
+                android:textColor="#050505"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Eliminar"
-        android:textSize="16sp"
-        tools:layout_editor_absoluteX="288dp"
-        tools:layout_editor_absoluteY="440dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="89dp"
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button11"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:backgroundTint="#00BCD4"
-        android:text="E"
-        tools:layout_editor_absoluteX="180dp"
-        tools:layout_editor_absoluteY="486dp" />
+                <EditText
+                    android:id="@+id/editTextTextPersonName"
+                    android:layout_width="193dp"
+                    android:layout_height="39dp"
+                    android:background="#EDE4DFDF"
+                    android:ems="10"
+                    android:hint="Introduce el nombre"
+                    android:inputType="textPersonName" />
 
-    <Button
-        android:id="@+id/button13"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:backgroundTint="#F44336"
-        android:text="X"
-        tools:layout_editor_absoluteX="296dp"
-        tools:layout_editor_absoluteY="567dp" />
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="182dp"
+                    android:layout_height="35dp"
+                    android:backgroundTint="#BC673AB7"
+                    android:text="Guardar"
+                    android:textSize="10sp" />
+            </LinearLayout>
 
-    <Button
-        android:id="@+id/button14"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:backgroundTint="#F44336"
-        android:text="X"
-        tools:layout_editor_absoluteX="296dp"
-        tools:layout_editor_absoluteY="486dp" />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/button12"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:backgroundTint="#00BCD4"
-        android:text="E"
-        tools:layout_editor_absoluteX="180dp"
-        tools:layout_editor_absoluteY="567dp" />
+        <LinearLayout
+            android:layout_width="392dp"
+            android:layout_height="99dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/imageButton7"
+                android:layout_width="94dp"
+                android:layout_height="82dp"
+                android:src="@drawable/image" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="68dp"
+                android:layout_height="58dp"
+                android:layout_marginLeft="10dp"
+                android:text="Nombre_jugador"
+                android:textColor="#050505"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="89dp"
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/editTextTextPersonName2"
+                    android:layout_width="193dp"
+                    android:layout_height="39dp"
+                    android:background="#EDE4DFDF"
+                    android:ems="10"
+                    android:hint="Introduce el nombre"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="182dp"
+                    android:layout_height="36dp"
+                    android:backgroundTint="#BC673AB7"
+                    android:text="Guardar"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="329dp"
+            android:layout_height="84dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="68dp"
+                android:layout_height="58dp"
+                android:text="Nombre_jugador"
+                android:textColor="#050505"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:backgroundTint="#00BCD4"
+                android:text="@string/editar" />
+
+            <Button
+                android:id="@+id/button14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:backgroundTint="#F44336"
+                android:text="@string/eliminar" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="328dp"
+            android:layout_height="76dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="68dp"
+                android:layout_height="58dp"
+                android:text="Nombre_jugador"
+                android:textColor="#050505"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:backgroundTint="#00BCD4"
+                android:text="@string/editar" />
+
+            <Button
+                android:id="@+id/button13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:backgroundTint="#F44336"
+                android:text="@string/eliminar" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
