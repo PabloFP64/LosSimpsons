@@ -1,34 +1,22 @@
 package com.example.lossimpsons;
 
+import com.mongodb.ConnectionString;
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientSettings;
+import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoDatabase;
 
-import org.w3c.dom.Document;
 
 public class BaseDatos {
 
-    private MongoClient mongoClient;
-    private MongoDatabase db;
+    ConnectionString connectionString = new ConnectionString("mongodb+srv://admin:1234@mydb.24vaewr.mongodb.net/?retryWrites=true&w=majority");
+    MongoClientSettings settings = MongoClientSettings.builder()
+            .applyConnectionString(connectionString)
+            .serverApi(ServerApi.builder()
+                    .version(ServerApiVersion.V1)
+                    .build())
+            .build();
+    MongoClient mongoClient = MongoClients.create(settings);
+    MongoDatabase database = mongoClient.getDatabase("MyDB");
 
-    public void conectar(){
-        mongoClient = new MongoClient();
-        db = mongoClient.getDatabase("baseDeDatos");
-    }
-
-    public void desconectar(){
-        mongoClient.close();
-    }
-
-    public void anadirPersonaje(Personajes personaje){
-        
-
-    }
-
-    public void modificarPersonaje(Personajes personaje){
-
-    }
-
-    public void eliminarPersonaje(Personajes personaje){
-
-    }
 }
