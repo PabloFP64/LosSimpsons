@@ -9,14 +9,13 @@ import com.mongodb.client.MongoDatabase;
 
 public class BaseDatos {
 
+
     ConnectionString connectionString = new ConnectionString("mongodb+srv://admin:1234@mydb.24vaewr.mongodb.net/?retryWrites=true&w=majority");
     MongoClientSettings settings = MongoClientSettings.builder()
             .applyConnectionString(connectionString)
-            .serverApi(ServerApi.builder()
-                    .version(ServerApiVersion.V1)
-                    .build())
             .build();
-    MongoClient mongoClient = MongoClients.create(settings);
+    MongoClient mongoClient = (MongoClient) MongoClients.create(settings);
     MongoDatabase database = mongoClient.getDatabase("MyDB");
+
 
 }
