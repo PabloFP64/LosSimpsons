@@ -48,7 +48,7 @@ public class Inicio extends AppCompatActivity {
                     Boolean comprobarContrasena = db.comprobarContrasena(usr, contr);
                     if (comprobarContrasena) {
                         Toast.makeText(Inicio.this, "Has iniciado sesion correctamente", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(), Menu.class);
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);
                     } else {
                         Toast.makeText(Inicio.this, "Error de usuario o contraseña", Toast.LENGTH_SHORT).show();
