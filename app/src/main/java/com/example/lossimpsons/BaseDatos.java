@@ -15,7 +15,7 @@ public class BaseDatos {
 
     public void conectar(){
         mongoClient = MongoClients.create(connectionString);
-        db = mongoClient.getDatabase("usuarios");
+        db = mongoClient.getDatabase("LosSimpsons");
     }
 
     public void desconectar(){
