@@ -28,6 +28,14 @@ public class Inicio extends AppCompatActivity {
         registrarse = findViewById(R.id.but_register);
         db = new BaseDatos();
 
+        registrarse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Intent intent = new Intent(getApplicationContext(), Registro.class);
+                //startActivity(intent);
+            }
+        });
+
         iniciarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
