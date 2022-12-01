@@ -31,8 +31,8 @@ public class Inicio extends AppCompatActivity {
         registrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intent = new Intent(getApplicationContext(), Registro.class);
-                //startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), Registro.class);
+                startActivity(intent);
             }
         });
 
