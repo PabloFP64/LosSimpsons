@@ -6,12 +6,14 @@ public class Usuario {
     private String usuario;
     private String eMail;
     private String contrasena;
+    private String contrasena2;
 
-    public Usuario(String nombre, String usuario, String eMail, String contrasena) {
+    public Usuario(String nombre, String usuario, String eMail) {
         this.nombre = nombre;
         this.usuario = usuario;
         this.eMail = eMail;
         this.contrasena = contrasena;
+        this.contrasena2 = contrasena;
     }
 
     public String getNombre() {
