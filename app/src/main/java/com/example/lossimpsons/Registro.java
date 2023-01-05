@@ -1,5 +1,6 @@
 package com.example.lossimpsons;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,50 +12,66 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 public class Registro extends AppCompatActivity {
 
-    EditText usuario, contrasena, contrasena2;
-    Button registrarse;
-    BaseDatos db;
+    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://lossimpsons-373812-default-rtdb.europe-west1.firebasedatabase.app/");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
-        usuario = findViewById(R.id.txt_inputUsuarioReg);
-        contrasena = findViewById(R.id.txt_inputContrasenaReg);
-        contrasena2 = findViewById(R.id.txt_inputContrasenaReg2);
-        registrarse = findViewById(R.id.but_reg);
-        db = new BaseDatos();
+        final EditText usuario = findViewById(R.id.txt_inputUsuarioReg);
+        final EditText contrasena = findViewById(R.id.txt_inputContrasenaReg);
+        final EditText contrasena2 = findViewById(R.id.txt_inputContrasenaReg2);
 
-        registrarse.setOnClickListener(new View.OnClickListener() {
+        final Button registroBtn = findViewById(R.id.but_reg);
+
+        registroBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String usr = usuario.getText().toString();
-                String contr = contrasena.getText().toString();
-                String contr2 = contrasena2.getText().toString();
+                final String usuarioTxt = usuario.getText().toString();
+                final String contrasenaTxt = contrasena.getText().toString();
+                final String contrasena2Txt = contrasena2.getText().toString();
 
-                if (TextUtils.isEmpty(usr) || TextUtils.isEmpty(contr) || TextUtils.isEmpty(contr2)) {
-                    Toast.makeText(Registro.this, "Debes rellenar todos los campos", Toast.LENGTH_SHORT).show();
+                if (usuarioTxt.isEmpty() || contrasenaTxt.isEmpty() || contrasena2Txt.isEmpty()){
+                    Toast.makeText(Registro.this, "Rellena todos los campos", Toast.LENGTH_SHORT).show();
                 }
-                else {
-                    Boolean comprobarUsuario = db.comprobarUsuario(usr);
-                    if (comprobarUsuario == false) {
-                        Boolean insertar = db.anadirUsuario(new Usuario( usr, contr, contr2));
-                        if (insertar) {
-                            Toast.makeText(Registro.this, "Registro completado con exito", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                            startActivity(intent);
-                        } else {
-                            Toast.makeText(Registro.this, "Hubo un fallo en el registro", Toast.LENGTH_SHORT).show();
+                else if(!contrasenaTxt.equals(contrasena2Txt)){
+                    Toast.makeText(Registro.this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    databaseReference.child("usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if(snapshot.hasChild(usuarioTxt)){
+                                Toast.makeText(Registro.this, "Este usuario ya existe", Toast.LENGTH_SHORT).show();
+                            }
+                            else{
+                                databaseReference.child("usuarios").child(usuarioTxt).child("contrasena").setValue(contrasenaTxt);
+                                Toast.makeText(Registro.this, "Registro correcto", Toast.LENGTH_SHORT).show();
+                                finish();
+                            }
                         }
-                    } else {
-                        Toast.makeText(Registro.this, "Este usuario ya existe", Toast.LENGTH_SHORT).show();
-                    }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
                 }
+
 
             }
         });
+
+
     }
 }

@@ -1,5 +1,6 @@
 package com.example.lossimpsons;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,51 +12,70 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 public class Inicio extends AppCompatActivity {
 
-    EditText usuario, contrasena;
-    Button iniciarSesion, registrarse;
-    BaseDatos db;
+    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://lossimpsons-373812-default-rtdb.europe-west1.firebasedatabase.app/");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
 
-        usuario = findViewById(R.id.txt_inputUsuario);
-        contrasena = findViewById(R.id.txt_inputContrasena);
-        iniciarSesion = findViewById(R.id.but_login);
-        registrarse = findViewById(R.id.but_register);
-        db = new BaseDatos();
+        final EditText email = findViewById(R.id.txt_inputUsuario);
+        final EditText contrasena = findViewById(R.id.txt_inputContrasena);
+        final Button loginBtn = findViewById(R.id.but_login);
+        final Button registerBtn = findViewById(R.id.but_register);
 
-        registrarse.setOnClickListener(new View.OnClickListener() {
+        loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Registro.class);
-                startActivity(intent);
-            }
-        });
+                final String emailTxt = email.getText().toString();
+                final String contrasenaTxt = contrasena.getText().toString();
 
-        iniciarSesion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String usr = usuario.getText().toString();
-                String contr = contrasena.getText().toString();
+                if (emailTxt.isEmpty() || contrasenaTxt.isEmpty()){
+                    Toast.makeText(Inicio.this, "Rellena todos los campos", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    databaseReference.child("usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if(snapshot.hasChild(emailTxt)){
+                                final String getContrasena = snapshot.child(emailTxt).child("contrasena").getValue(String.class);
+                                if(getContrasena.equals(contrasenaTxt)){
+                                    Toast.makeText(Inicio.this, "Inicio de sesión correcto", Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(Inicio.this, MainActivity.class));
+                                    finish();
+                                }
+                                else{
+                                    Toast.makeText(Inicio.this, "Contraseña incorrecta", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                            else{
+                                Toast.makeText(Inicio.this, "Usuario incorrecto", Toast.LENGTH_SHORT).show();
+                            }
+                        }
 
-                if (TextUtils.isEmpty(usr) || TextUtils.isEmpty(contr)) {
-                    Toast.makeText(Inicio.this, "Faltan datos", Toast.LENGTH_SHORT).show();
-                } else {
-                    Boolean comprobarContrasena = db.comprobarContrasena(usr, contr);
-                    if (comprobarContrasena) {
-                        Toast.makeText(Inicio.this, "Has iniciado sesion correctamente", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(intent);
-                    } else {
-                        Toast.makeText(Inicio.this, "Error de usuario o contraseña", Toast.LENGTH_SHORT).show();
-                    }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
                 }
             }
         });
+        registerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Inicio.this, Registro.class));
+            }
+        });
+
     }
 
 }
