@@ -21,4 +21,6 @@
     <string name="usuario">Usuario</string>
     <string name="instroducela_de_nuevo">instroducela de nuevo</string>
     <string name="confirmar_contrase_a">Confirmar contraseña</string>
+    <string name="donde_estamos">Dónde estamos</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoiYWxlZGVsZW9uZXoiLCJhIjoiY2xhdGQxZDd6MmJmMzN4bGJieDMyZmJleCJ9.bIFVpM-jk-poGfoeuFgnZg</string>
 </resources>

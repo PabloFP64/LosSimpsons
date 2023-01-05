@@ -35,7 +35,7 @@ public class Registro extends AppCompatActivity {
                 String contr = contrasena.getText().toString();
                 String contr2 = contrasena2.getText().toString();
 
-                if (TextUtils.isEmpty(usr) || TextUtils.isEmpty(contr) || TextUtils.isEmpty(contr2) {
+                if (TextUtils.isEmpty(usr) || TextUtils.isEmpty(contr) || TextUtils.isEmpty(contr2)) {
                     Toast.makeText(Registro.this, "Debes rellenar todos los campos", Toast.LENGTH_SHORT).show();
                 }
                 else {
