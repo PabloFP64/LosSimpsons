@@ -1,5 +1,7 @@
 package com.example.lossimpsons;
 
+import com.mongodb.ConnectionString;
+import com.mongodb.MongoClientSettings;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
@@ -9,14 +11,15 @@ import org.bson.Document;
 
 public class BaseDatos {
 
-    private String connectionString = "mongodb+srv://admin:1234@mydb.24vaewr.mongodb.net/?retryWrites=true&w=majority";
-    private MongoClient mongoClient;
-    private MongoDatabase db;
 
-    public void conectar(){
-        mongoClient = MongoClients.create(connectionString);
-        db = mongoClient.getDatabase("LosSimpsons");
-    }
+
+    ConnectionString connectionString = new ConnectionString("mongodb+srv://admin:1234@mydb.24vaewr.mongodb.net/?retryWrites=true&w=majority");
+    MongoClientSettings settings = MongoClientSettings.builder()
+            .applyConnectionString(connectionString)
+            .build();
+    MongoClient mongoClient = MongoClients.create(settings);
+    MongoDatabase db = mongoClient.getDatabase("LosSimpsons");
+
 
     public void desconectar(){
         mongoClient.close();
@@ -43,6 +46,7 @@ public class BaseDatos {
         }else{
             return true;
         }
+
     }
 
     public boolean comprobarContrasena(String usuario, String contrasena){

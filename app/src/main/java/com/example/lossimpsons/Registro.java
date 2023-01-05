@@ -44,7 +44,7 @@ public class Registro extends AppCompatActivity {
                         Boolean insertar = db.anadirUsuario(new Usuario( usr, contr, contr2));
                         if (insertar) {
                             Toast.makeText(Registro.this, "Registro completado con exito", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(getApplicationContext(), Menu.class);
+                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                             startActivity(intent);
                         } else {
                             Toast.makeText(Registro.this, "Hubo un fallo en el registro", Toast.LENGTH_SHORT).show();
