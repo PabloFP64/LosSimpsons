@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Registro extends AppCompatActivity {
 
-    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://lossimpsons-373812-default-rtdb.europe-west1.firebasedatabase.app/");
+    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://lossimpsons-373812-default-rtdb.firebaseio.com");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
