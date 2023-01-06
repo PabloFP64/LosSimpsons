@@ -20,14 +20,14 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Registro extends AppCompatActivity {
 
-    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://lossimpsons-373812-default-rtdb.firebaseio.com");
+    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://thesimpsonsuax-default-rtdb.firebaseio.com/");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
-        final EditText usuario = findViewById(R.id.txt_inputUsuarioReg);
+        final EditText email = findViewById(R.id.txt_inputUsuarioReg);
         final EditText contrasena = findViewById(R.id.txt_inputContrasenaReg);
         final EditText contrasena2 = findViewById(R.id.txt_inputContrasenaReg2);
 
@@ -36,36 +36,20 @@ public class Registro extends AppCompatActivity {
         registroBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String usuarioTxt = usuario.getText().toString();
+                final String emailTxt = email.getText().toString();
                 final String contrasenaTxt = contrasena.getText().toString();
                 final String contrasena2Txt = contrasena2.getText().toString();
 
-                if (usuarioTxt.isEmpty() || contrasenaTxt.isEmpty() || contrasena2Txt.isEmpty()){
+                if (emailTxt.isEmpty() || contrasenaTxt.isEmpty() || contrasena2Txt.isEmpty()){
                     Toast.makeText(Registro.this, "Rellena todos los campos", Toast.LENGTH_SHORT).show();
                 }
                 else if(!contrasenaTxt.equals(contrasena2Txt)){
                     Toast.makeText(Registro.this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    databaseReference.child("usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if(snapshot.hasChild(usuarioTxt)){
-                                Toast.makeText(Registro.this, "Este usuario ya existe", Toast.LENGTH_SHORT).show();
-                            }
-                            else{
-                                databaseReference.child("usuarios").child(usuarioTxt).child("contrasena").setValue(contrasenaTxt);
-                                Toast.makeText(Registro.this, "Registro correcto", Toast.LENGTH_SHORT).show();
-                                finish();
-                            }
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
-                        }
-                    });
-
+                    databaseReference.child("usuarios").child(emailTxt).child("contrasena").setValue(contrasenaTxt);
+                    Toast.makeText(Registro.this, "usuario registrado con exito", Toast.LENGTH_SHORT).show();
+                    finish();
                 }
 
 

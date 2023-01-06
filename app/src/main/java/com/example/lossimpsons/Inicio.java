@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Inicio extends AppCompatActivity {
 
-    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://lossimpsons-373812-default-rtdb.firebaseio.com");
+    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://thesimpsonsuax-default-rtdb.firebaseio.com/");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,30 +40,7 @@ public class Inicio extends AppCompatActivity {
                     Toast.makeText(Inicio.this, "Rellena todos los campos", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    databaseReference.child("usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if(snapshot.hasChild(emailTxt)){
-                                final String getContrasena = snapshot.child(emailTxt).child("contrasena").getValue(String.class);
-                                if(getContrasena.equals(contrasenaTxt)){
-                                    Toast.makeText(Inicio.this, "Inicio de sesión correcto", Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(Inicio.this, MainActivity.class));
-                                    finish();
-                                }
-                                else{
-                                    Toast.makeText(Inicio.this, "Contraseña incorrecta", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                            else{
-                                Toast.makeText(Inicio.this, "Usuario incorrecto", Toast.LENGTH_SHORT).show();
-                            }
-                        }
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
-                        }
-                    });
                 }
             }
         });
