@@ -27,7 +27,8 @@ public class Registro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
-        final EditText email = findViewById(R.id.txt_inputUsuarioReg);
+        final EditText email = findViewById(R.id.txt_inputEmail);
+        final EditText usuario = findViewById(R.id.txt_inputUsuarioReg);
         final EditText contrasena = findViewById(R.id.txt_inputContrasenaReg);
         final EditText contrasena2 = findViewById(R.id.txt_inputContrasenaReg2);
 
@@ -37,6 +38,7 @@ public class Registro extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 final String emailTxt = email.getText().toString();
+                final String usuarioTxt = usuario.getText().toString();
                 final String contrasenaTxt = contrasena.getText().toString();
                 final String contrasena2Txt = contrasena2.getText().toString();
 
@@ -50,10 +52,11 @@ public class Registro extends AppCompatActivity {
                     databaseReference.child("usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if(snapshot.hasChild(emailTxt)){
+                            if(snapshot.hasChild(usuarioTxt)){
                                 Toast.makeText(Registro.this, "Este usuario ya existe", Toast.LENGTH_SHORT).show();
                             }else{
-                                databaseReference.child("usuarios").child(emailTxt).child("contrasena").setValue(contrasenaTxt);
+                                databaseReference.child("usuarios").child(usuarioTxt).child("eMail").setValue(emailTxt);
+                                databaseReference.child("usuarios").child(usuarioTxt).child("contrasena").setValue(contrasenaTxt);
                                 Toast.makeText(Registro.this, "usuario registrado con exito", Toast.LENGTH_SHORT).show();
                                 finish();
                             }
