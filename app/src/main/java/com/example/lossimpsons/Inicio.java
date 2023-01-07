@@ -25,7 +25,7 @@ public class Inicio extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
 
-        final EditText email = findViewById(R.id.txt_inputUsuario);
+        final EditText usuario = findViewById(R.id.txt_inputUsuario);
         final EditText contrasena = findViewById(R.id.txt_inputContrasena);
         final Button loginBtn = findViewById(R.id.but_login);
         final Button registerBtn = findViewById(R.id.but_register);
@@ -33,18 +33,18 @@ public class Inicio extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String emailTxt = email.getText().toString();
+                final String usuarioTxt = usuario.getText().toString();
                 final String contrasenaTxt = contrasena.getText().toString();
 
-                if (emailTxt.isEmpty() || contrasenaTxt.isEmpty()){
+                if (usuarioTxt.isEmpty() || contrasenaTxt.isEmpty()){
                     Toast.makeText(Inicio.this, "Rellena todos los campos", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     databaseReference.child("usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if(snapshot.hasChild(emailTxt)){
-                                final String getContrasena = snapshot.child(emailTxt).child("contrasena").getValue(String.class);
+                            if(snapshot.hasChild(usuarioTxt)){
+                                final String getContrasena = snapshot.child(usuarioTxt).child("contrasena").getValue(String.class);
                                 if(getContrasena.equals(contrasenaTxt)){
                                     Toast.makeText(Inicio.this, "Inicio de sesión correcto", Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(Inicio.this, MainActivity.class));

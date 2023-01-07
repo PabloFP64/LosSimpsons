@@ -18,8 +18,10 @@
     <string name="introduce_tu_contrase_a">Introduce tu contraseña</string>
     <string name="contrase_a">Contraseña</string>
     <string name="introduce_tu_email">Introduce tu email</string>
+    <string name="introduce_tu_usuario">Introduce tu usuario</string>
     <string name="usuario">Usuario</string>
-    <string name="instroducela_de_nuevo">instroducela de nuevo</string>
+    <string name="eMail">eMail</string>
+    <string name="instroducela_de_nuevo">Introducela de nuevo</string>
     <string name="confirmar_contrase_a">Confirmar contraseña</string>
     <string name="donde_estamos">Dónde estamos</string>
     <string name="mapbox_access_token">pk.eyJ1IjoiYWxlZGVsZW9uZXoiLCJhIjoiY2xhdGQxZDd6MmJmMzN4bGJieDMyZmJleCJ9.bIFVpM-jk-poGfoeuFgnZg</string>
