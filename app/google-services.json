@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "236658851775",
+    "firebase_url": "https://thesimpsonsuax-default-rtdb.firebaseio.com",
+    "project_id": "thesimpsonsuax",
+    "storage_bucket": "thesimpsonsuax.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236658851775:android:7bf689c829307235376b0a",
+        "android_client_info": {
+          "package_name": "com.example.lossimpsons"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "236658851775-noqh14nr7ego0dben4b3a536h48097a1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2IcZDByMLNikElmPrA6kL2Tzuscj03Xo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "236658851775-noqh14nr7ego0dben4b3a536h48097a1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
