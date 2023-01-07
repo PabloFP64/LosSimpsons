@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Registro extends AppCompatActivity {
 
-    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://thesimpsonsuax-default-rtdb.firebaseio.com/");
+    DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://thesimpsonsuax-default-rtdb.firebaseio.com/").getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +47,24 @@ public class Registro extends AppCompatActivity {
                     Toast.makeText(Registro.this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    databaseReference.child("usuarios").child(emailTxt).child("contrasena").setValue(contrasenaTxt);
-                    Toast.makeText(Registro.this, "usuario registrado con exito", Toast.LENGTH_SHORT).show();
-                    finish();
+                    databaseReference.child("usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if(snapshot.hasChild(emailTxt)){
+                                Toast.makeText(Registro.this, "Este usuario ya existe", Toast.LENGTH_SHORT).show();
+                            }else{
+                                databaseReference.child("usuarios").child(emailTxt).child("contrasena").setValue(contrasenaTxt);
+                                Toast.makeText(Registro.this, "usuario registrado con exito", Toast.LENGTH_SHORT).show();
+                                finish();
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
                 }
 
 
