@@ -38,4 +38,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intentAcercaDe = new Intent(this, AcercaDe.class);
         startActivity(intentAcercaDe);
     }
+
+    public void VentanaMapa(View view){
+        Intent intentMapa = new Intent(this, MapaInicial.class);
+        startActivity(intentMapa);
+    }
 }

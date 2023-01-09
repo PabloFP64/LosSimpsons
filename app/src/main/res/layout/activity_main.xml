@@ -20,8 +20,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="413dp"
-        android:layout_height="125dp"
+        android:layout_width="409dp"
+        android:layout_height="110dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,20 +47,20 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="326dp"
-        android:layout_height="669dp"
+        android:layout_width="306dp"
+        android:layout_height="600dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@+id/imageView15"
         app:layout_constraintEnd_toEndOf="@+id/imageView15"
-        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="@+id/imageView15"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.272">
+        app:layout_constraintVertical_bias="0.0">
 
         <Button
             android:id="@+id/boton_acercade"
             android:layout_width="140dp"
-            android:layout_height="5dp"
+            android:layout_height="2dp"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
@@ -73,7 +73,7 @@
         <Button
             android:id="@+id/boton_jugadores"
             android:layout_width="146dp"
-            android:layout_height="5dp"
+            android:layout_height="2dp"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
@@ -84,7 +84,7 @@
         <Button
             android:id="@+id/boton_escenarios"
             android:layout_width="140dp"
-            android:layout_height="5dp"
+            android:layout_height="2dp"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
@@ -95,7 +95,7 @@
         <Button
             android:id="@+id/boton_personajes"
             android:layout_width="140dp"
-            android:layout_height="5dp"
+            android:layout_height="2dp"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:backgroundTint="#03A9F4"
@@ -105,13 +105,23 @@
         <Button
             android:id="@+id/boton_ranking"
             android:layout_width="140dp"
-            android:layout_height="5dp"
+            android:layout_height="2dp"
             android:layout_gravity="center"
-            android:layout_marginBottom="40dp"
             android:layout_weight="1"
             android:backgroundTint="#B0F44336"
             android:onClick="VentanaRanking"
             android:text="@string/main_ranking" />
+
+        <Button
+            android:id="@+id/boton_mapa"
+            android:layout_width="140dp"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:gravity="center|center_horizontal"
+            android:onClick="VentanaMapa"
+            android:text="Dónde estamos" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -47,5 +47,6 @@ public class MapaInicial extends FragmentActivity implements OnMapReadyCallback 
         LatLng uax = new LatLng(40.4542443, -3.98490159195943);
         mMap.addMarker(new MarkerOptions().position(uax).title("Marker in UAX"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(uax));
+        mMap.setMinZoomPreference(12);
     }
 }
