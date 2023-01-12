@@ -9,8 +9,10 @@ Objetivos:
 Desarrollar una aplicación para un dispositivo móvil Android.
 
 
-JUEGO
+JUEGO:
+
 https://github.com/aledeleonez/JuegoLosSimpsons.git
 
-PÁGINA
+PÁGINA:
+
 https://github.com/Silvia452/PaginaSimpsons.git
