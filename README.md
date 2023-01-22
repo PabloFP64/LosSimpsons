@@ -4,14 +4,13 @@ APP
 https://github.com/PabloFP64/LosSimpsons
 
 
-
 Objetivos:
 Desarrollar una aplicación para un dispositivo móvil Android.
 
 
 JUEGO:
 
-https://github.com/aledeleonez/JuegoLosSimpsons.git
+https://github.com/aledeleonez/JuegoSimpsons.git
 
 PÁGINA:
 
