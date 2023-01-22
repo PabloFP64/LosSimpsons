@@ -10,7 +10,7 @@ Desarrollar una aplicación para un dispositivo móvil Android.
 
 JUEGO:
 
-https://github.com/aledeleonez/JuegoSimpsons.git
+https://github.com/PabloFP64/JuegoSimpsons.git
 
 PÁGINA:
 
